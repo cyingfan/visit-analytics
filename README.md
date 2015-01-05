@@ -1,3 +1,9 @@
+# Visit Analytics
+This is a reporting dashboard based on rdash-angular.
+The visualisations are built using d3.js.
+
+The following text is the original readme from rdash-angular.
+
 # RDash rdash-angular
 ## Responsive, bloat free, bootstrap powered admin style dashboard!
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/rdash/rdash-angular?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
