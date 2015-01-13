@@ -3,9 +3,9 @@
  */
 
 angular.module('RDash')
-    .controller('MasterCtrl', ['$scope', '$cookieStore', '$http', MasterCtrl]);
+    .controller('MasterCtrl', ['$scope', '$cookieStore', '$http', '$state', MasterCtrl]);
 
-function MasterCtrl($scope, $cookieStore, $http) {
+function MasterCtrl($scope, $cookieStore, $http, $state) {
     /**
      * Sidebar Toggle & Cookie Control
      */
@@ -40,4 +40,6 @@ function MasterCtrl($scope, $cookieStore, $http) {
     $http.get('data/WebDeveloperRecrData.json').success(function(data) {
         $scope.rawData = data;
     });
+
+    $scope.$state = $state;
 }
