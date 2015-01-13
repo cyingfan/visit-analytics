@@ -1,8 +1,9 @@
+<div ng-controller="OverviewCtrl">
+
 <div class="row">
     <div class="col-lg-12">
-        <rd-widget>
-            {{ rawData.start }}
-        </rd-widget>
+        <div>Start Date: {{ startDate | date:'medium' }}</div>
+        <div>End Date: {{ rawData.finish | date:'medium' }}</div>
     </div>
 </div>
 
@@ -55,11 +56,9 @@
 
 <div class="row">
         <div class="col-lg-4">
+                <highchart config="byDwellConfig"></highchart>
 		<rd-widget>
-      		<rd-widget-header icon="fa-tasks" title="Total By Dwell">
-				
-      		</rd-widget-header>
-      		<rd-widget-body classes="medium no-padding">
+      		<rd-widget-body classes="no-padding">
 				<div class="table-responsive">
 					<table class="table">
 						<tbody>
@@ -74,10 +73,8 @@
 		</rd-widget>
 	</div>
         <div class="col-lg-4">
+                <highchart config="byFreqConfig"></highchart>
 		<rd-widget>
-      		<rd-widget-header icon="fa-tasks" title="Total By Frequency">
-				
-      		</rd-widget-header>
       		<rd-widget-body classes="medium no-padding">
 				<div class="table-responsive">
 					<table class="table">
@@ -89,14 +86,13 @@
 						</tbody>
 					</table>
 				</div>
+
 			</rd-widget-body>
 		</rd-widget>
 	</div>
         <div class="col-lg-4">
+                <highchart config="byDwellBracketConfig"></highchart> 
 		<rd-widget>
-      		<rd-widget-header icon="fa-tasks" title="Total By Dwell Bracket">
-				
-      		</rd-widget-header>
       		<rd-widget-body classes="medium no-padding">
 				<div class="table-responsive">
 					<table class="table">
@@ -111,5 +107,6 @@
 			</rd-widget-body>
 		</rd-widget>
 	</div>
+</div>
 </div>
 

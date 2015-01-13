@@ -18,7 +18,10 @@
   <script type="text/javascript" src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
   <script type="text/javascript" src="components/angular-cookies/angular-cookies.min.js"></script>
   <script type="text/javascript" src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <!-- endbuild -->
+  <script type="text/javascript" src="components/highcharts/adapters/standalone-framework.js"></script>
+  <script type="text/javascript" src="components/highcharts/highcharts.js"></script>
+  <script type="text/javascript" src="components/highcharts-ng/dist/highcharts-ng.min.js"></script>
+  <!-- endbuild -->
   <!-- Custom Scripts -->
   <script type="text/javascript" src="js/dashboard.min.js"></script>
 </head>
@@ -37,6 +40,9 @@
         <li class="sidebar-title"><span>NAVIGATION</span></li>
         <li class="sidebar-list">
           <a href="#">Overview <span class="menu-icon fa fa-tachometer"></span></a>
+        </li>
+        <li class="sidebar-list">
+            <a href="#/average">Average By Period<span class="menu-icon fa fa-line-chart"></span></a>
         </li>
         <li class="sidebar-list">
           <a href="#/tables">Tables <span class="menu-icon fa fa-table"></span></a>
@@ -65,7 +71,7 @@
                 Inhouse Dashboard
               </div>
               <div class="breadcrumb-links">
-                Overview
+                  {{ $state.current.name | capitalize }}
               </div>
             </div>
           </div>
