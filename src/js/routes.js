@@ -22,6 +22,10 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
             .state('average', {
                 url: '/average',
                 templateUrl: 'templates/average.html'
+            })
+            .state('percentage', {
+                url: '/percentage',
+                templateUrl: 'templates/percentage.html' 
             });
     }
 ]);

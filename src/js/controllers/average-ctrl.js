@@ -46,7 +46,6 @@ angular.module('RDash')
                 highChartsNg.series[0].name = 'byHour';
                 highChartsNg.series[0].data = $scope.rawData.avg_hours;
            }
-            console.log(angular.toJson(highChartsNg));
         };
 
         $scope.highChartsNg = highChartsNg;
