@@ -1,6 +1,6 @@
 # Visit Analytics
 This is a reporting dashboard based on rdash-angular.
-The visualisations are built using d3.js.
+The visualisations are built using highcharts.
 
 The following text is the original readme from rdash-angular.
 
