@@ -3,7 +3,7 @@ angular.module('RDash')
         var weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
         var highChartsNg = {
-            
+
             title : { text: ''},
 
             options: {
@@ -28,7 +28,7 @@ angular.module('RDash')
                 name: '',
                 data: []
             }]
-                        
+
         }
 
         $scope.periodType = 'day';
@@ -51,4 +51,8 @@ angular.module('RDash')
         $scope.highChartsNg = highChartsNg;
         $scope.loadGraph();
 
+        $scope.$watch('periodType', function(newValue, oldValue) {
+            if (newValue === oldValue) return;
+            $scope.loadGraph();
+        });
     }]);
