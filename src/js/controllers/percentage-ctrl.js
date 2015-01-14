@@ -1,7 +1,7 @@
 angular.module('RDash')
     .controller('PercentageCtrl', ['$scope', '$filter', function($scope, $filter) {
         var highChartsNg = {
-            
+
             title : { text: ''},
 
             options: {
@@ -9,7 +9,7 @@ angular.module('RDash')
                 xAxis: { categories: [] },
                 yAxis: {
                     max: 100,
-                    title: { 
+                    title: {
                         text: 'Percent',
                         align: 'high'
                     },
@@ -27,7 +27,7 @@ angular.module('RDash')
                 },
                 plotOptions: {
                     bar: {
-                        dataLabels: { 
+                        dataLabels: {
                             enabled: true,
                             format: "{y} %"
                         }
@@ -35,7 +35,7 @@ angular.module('RDash')
                 }
             },
 
-            series: []                        
+            series: []
         }
 
         // Converts text like "percent_qualified_visits" to "Qualified Visits"
@@ -60,7 +60,7 @@ angular.module('RDash')
                 for (i in types) {
                     var type = types[i];
                     categories.push(extractTitle(type));
-                   
+
                     for (j in $scope.rawData["subloc_" + type]) {
                         data = $scope.rawData["subloc_" + type][j];
 
@@ -97,7 +97,7 @@ angular.module('RDash')
                     }
                 }
             }
-            
+
             series = [];
             angular.forEach(table, function(value, key) {
                 var s = angular.copy(_series);
@@ -106,7 +106,6 @@ angular.module('RDash')
                 s.data = value;
                 this.push(s);
             }, series);
-            console.log(angular.toJson(series));
             highChartsNg.series = series;
             highChartsNg.options.xAxis.categories = categories;
 
@@ -114,5 +113,10 @@ angular.module('RDash')
 
         $scope.highChartsNg = highChartsNg;
         $scope.loadGraph();
+
+        $scope.$watch('viewBy', function(newValue, oldValue) {
+            if (newValue === oldValue) return;
+            $scope.loadGraph();
+        });
 
     }]);
